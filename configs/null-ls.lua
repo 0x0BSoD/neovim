@@ -7,7 +7,6 @@ end
 local b = null_ls.builtins
 
 local sources = {
-
   -- Lua
   b.formatting.stylua,
 
@@ -18,21 +17,21 @@ local sources = {
   b.formatting.black,
 
   -- go
-  b.formatting.gofmt,
-  b.formatting.goimports,
+  b.formatting.gofumpt,
+  b.formatting.goimports_reviser,
+  b.formatting.golines,
 }
 
 null_ls.setup {
-  debug = true,
+  debug = false,
   sources = sources,
 }
 
 -- Add autocmds to run formatting on save for .go and .py files
-vim.cmd([[
+vim.cmd [[
   augroup null_ls_formatting
     autocmd!
     autocmd BufWritePre *.go lua vim.lsp.buf.format((nil, 1000)
     autocmd BufWritePre *.py lua vim.lsp.buf.format((nil, 1000)
   augroup END
-]])
-
+]]

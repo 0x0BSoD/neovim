@@ -1,5 +1,6 @@
 ---@diagnostic disable: different-requires
 local lspconfig = require "lspconfig"
+local util = require "lspconfig/util"
 
 -- Import on_attach & capabilities functions from lspconfig
 local on_attach = require("plugins.configs.lspconfig").on_attach
@@ -31,21 +32,16 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Custom configurations of lsps
-lspconfig.helm_ls.setup {
+lspconfig.gopls.setup {
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
-    ["helm-ls"] = {
-      yamlls = {
-        enabled = false,
-        -- diagnosticsLimit = 50,
-        -- showDiagnosticsDirectly = false,
-        -- config = {
-        --   path = "yaml-language-server",
-        --   schemas = {
-        --     kubernetes = "templates/**",
-        --   },
-        --   completion = true,
-        --   hover = true,
-        -- },
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
       },
     },
   },
@@ -65,7 +61,6 @@ lspconfig.ruff_lsp.setup {
 local shellcheck = require "efmls-configs.linters.shellcheck"
 local beautysh = require "efmls-configs.formatters.beautysh"
 local prettier = require "efmls-configs.formatters.prettier"
--- local golangci_lint = require "efmls-configs.linters.golangci_lint"
 local gofmt = require "efmls-configs.formatters.gofmt"
 local stylua = require "efmls-configs.formatters.stylua"
 local jq = require "efmls-configs.linters.jq"
@@ -74,9 +69,9 @@ local markdownlint = require "efmls-configs.linters.markdownlint"
 local black = require "efmls-configs.formatters.black"
 local dprint = require "efmls-configs.formatters.dprint"
 local yq = require "efmls-configs.formatters.yq"
--- local yamllint = require "efmls-configs.linters.yamllint"
 local hadolint = require "efmls-configs.linters.hadolint"
 
+-- Custom definitions of tools for lining and formatting
 local yamllint = {
   prefix = "yamllint",
   lintCommand = "yamllint -c ~/.config/yamllint/extended_conf.yaml -f parsable -",
@@ -93,7 +88,7 @@ local langs = {
   markdown = { markdownlint, mdformat },
   python = { black },
   toml = { dprint },
-  -- yaml = { yamllint, yq },
+  yaml = { yamllint, yq },
 }
 
 -- efmls_configs configuration table
