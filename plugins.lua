@@ -45,6 +45,7 @@ local plugins = {
   { import = "custom.configs.user.notify" },
   { import = "custom.configs.user.searchbox" },
   { import = "custom.configs.user.trouble" },
+  { import = "custom.configs.user.vim-helm" },
 }
 
 return plugins
