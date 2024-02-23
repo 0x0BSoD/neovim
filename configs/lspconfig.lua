@@ -18,7 +18,6 @@ local servers = {
   "pyright",
   "yamlls",
   "dockerls",
-  "clojure_lsp",
   "cmake",
   "vimls",
 }
