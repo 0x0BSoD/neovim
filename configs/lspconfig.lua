@@ -34,11 +34,6 @@ end
 lspconfig.helm_ls.setup {
   settings = {
     ["helm-ls"] = {
-      valuesFiles = {
-        mainValuesFile = "values.yaml",
-        lintOverlayValuesFile = "values.lint.yaml",
-        additionalValuesFilesGlobPattern = "values*.yaml",
-      },
       yamlls = {
         enabled = false,
         -- diagnosticsLimit = 50,
@@ -54,6 +49,7 @@ lspconfig.helm_ls.setup {
       },
     },
   },
+  on_attach = on_attach,
   capabilities = capabilities,
 }
 lspconfig.ruff_lsp.setup {
