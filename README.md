@@ -1,5 +1,7 @@
 # NeoVim Custom Config
 
+![screenshot](/pics/screenshot.png)
+
 ## Plugins List
 
 - [better-escape](https://github.com/nvim-zh/better-escape.vim)
