@@ -5,7 +5,7 @@ local core = require "custom.utils.coreutil"
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "ayu_dark",
+  theme = "catppuccin",
 
   telescope = { style = "bordered" },
 

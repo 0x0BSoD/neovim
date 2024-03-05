@@ -75,7 +75,7 @@ M.mason = {
     "yaml-language-server",
     "yamlfmt",
     "yamllint",
-    "helm_ls",
+    "helm-ls",
 
     -- sql
     "sqlfluff",
