@@ -46,6 +46,7 @@ local plugins = {
   { import = "custom.configs.user.searchbox" },
   { import = "custom.configs.user.trouble" },
   { import = "custom.configs.user.vim-helm" },
+  { import = "custom.configs.user.dashboard-nvim" }
 }
 
 return plugins

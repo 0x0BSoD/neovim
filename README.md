@@ -5,6 +5,7 @@
 ## Plugins List
 
 - [better-escape](https://github.com/nvim-zh/better-escape.vim)
+- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)
 - [diffview](https://github.com/sindrets/diffview.nvim)
 - [dressing](https://github.com/stevearc/dressing.nvim)
 - [efmls-configs](https://github.com/creativenull/efmls-configs-nvim)
