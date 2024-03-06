@@ -18,6 +18,7 @@
 - [md-preview](https://github.com/iamcco/markdown-preview.nvim)
 - [notify](https://github.com/rcarriga/nvim-notify)
 - [searchbox](https://github.com/VonHeikemen/searchbox.nvim)
+- [structure-go](https://github.com/crusj/structrue-go.nvim)
 - [trouble](https://github.com/folke/trouble.nvim)
 - [vim-helm](https://github.com/towolf/vim-helm)
 
